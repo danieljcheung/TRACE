@@ -32,6 +32,7 @@ class Settings(BaseSettings):
     SCAN_TIMEOUT_SECONDS: int = 90
 
     GITHUB_TOKEN: Optional[str] = None
+    HIBP_API_KEY: Optional[str] = None
 
     class Config:
         env_file = ".env"
