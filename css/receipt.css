@@ -1,0 +1,340 @@
+/* Receipt Page Layout */
+.receipt-page {
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Receipt Container */
+.receipt {
+    width: 100%;
+    max-width: 700px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Receipt Header */
+.receipt__header {
+    padding: 30px;
+    border-bottom: 1px dashed var(--border);
+    text-align: center;
+}
+
+.receipt__logo {
+    color: var(--accent);
+    font-size: 0.85rem;
+    line-height: 1.2;
+    white-space: pre;
+    margin-bottom: 15px;
+}
+
+.receipt__title {
+    color: var(--accent);
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.receipt__subtitle {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+/* Receipt Meta */
+.receipt__meta {
+    padding: 20px 30px;
+    border-bottom: 1px dashed var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    font-size: 0.85rem;
+}
+
+.receipt__meta-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.receipt__meta-label {
+    color: var(--text-secondary);
+}
+
+.receipt__meta-value {
+    color: var(--text-primary);
+    text-align: right;
+}
+
+/* Risk Score Section */
+.receipt__risk {
+    padding: 25px 30px;
+    border-bottom: 1px dashed var(--border);
+    text-align: center;
+}
+
+.receipt__risk-title {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.receipt__risk-score {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.receipt__risk-score--low {
+    color: var(--severity-low);
+}
+
+.receipt__risk-score--medium {
+    color: var(--severity-medium);
+}
+
+.receipt__risk-score--high {
+    color: var(--severity-high);
+}
+
+.receipt__risk-score--critical {
+    color: var(--severity-critical);
+}
+
+.receipt__risk-level {
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.receipt__risk-bar {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-family: monospace;
+}
+
+/* Findings Sections */
+.receipt__findings {
+    padding: 20px 30px;
+}
+
+.receipt__findings-section {
+    margin-bottom: 25px;
+}
+
+.receipt__findings-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+.receipt__findings-icon {
+    font-size: 0.9rem;
+}
+
+.receipt__findings-icon--critical {
+    color: var(--severity-critical);
+}
+
+.receipt__findings-icon--high {
+    color: var(--severity-high);
+}
+
+.receipt__findings-icon--medium {
+    color: var(--severity-medium);
+}
+
+.receipt__findings-icon--low {
+    color: var(--severity-low);
+}
+
+.receipt__findings-title {
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.receipt__findings-count {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin-left: auto;
+}
+
+/* Finding Item */
+.receipt__finding {
+    padding: 10px 0;
+    border-bottom: 1px dotted var(--border);
+    font-size: 0.85rem;
+}
+
+.receipt__finding:last-child {
+    border-bottom: none;
+}
+
+.receipt__finding-title {
+    color: var(--text-primary);
+    margin-bottom: 3px;
+}
+
+.receipt__finding-source {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+/* Audit Log */
+.receipt__audit {
+    padding: 20px 30px;
+    border-top: 1px dashed var(--border);
+    background: var(--bg-tertiary);
+}
+
+.receipt__audit-title {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.receipt__audit-log {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.receipt__audit-entry {
+    padding: 2px 0;
+}
+
+/* Security Notice */
+.receipt__security {
+    padding: 20px 30px;
+    border-top: 1px dashed var(--border);
+    text-align: center;
+}
+
+.receipt__security-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    border-radius: 4px;
+    color: var(--success);
+    font-size: 0.8rem;
+}
+
+.receipt__security-text {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    margin-top: 10px;
+}
+
+/* Receipt Footer */
+.receipt__footer {
+    padding: 20px 30px;
+    border-top: 1px dashed var(--border);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+.receipt__footer-logo {
+    color: var(--accent);
+    margin-bottom: 5px;
+}
+
+/* Actions */
+.receipt__actions {
+    padding: 20px 30px;
+    display: flex;
+    gap: 15px;
+    border-top: 1px dashed var(--border);
+}
+
+/* Summary Stats */
+.receipt__stats {
+    padding: 20px 30px;
+    border-bottom: 1px dashed var(--border);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    text-align: center;
+}
+
+.receipt__stat {
+    padding: 10px;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+}
+
+.receipt__stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.receipt__stat-value--critical {
+    color: var(--severity-critical);
+}
+
+.receipt__stat-value--high {
+    color: var(--severity-high);
+}
+
+.receipt__stat-value--medium {
+    color: var(--severity-medium);
+}
+
+.receipt__stat-value--low {
+    color: var(--severity-low);
+}
+
+.receipt__stat-label {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+/* Divider */
+.receipt__divider {
+    padding: 10px 30px;
+    text-align: center;
+    color: var(--border);
+    font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .receipt__meta {
+        grid-template-columns: 1fr;
+    }
+
+    .receipt__stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .receipt__actions {
+        flex-direction: column;
+    }
+}
+
+/* Print styles */
+@media print {
+    .receipt__actions {
+        display: none;
+    }
+
+    .receipt {
+        border: none;
+        box-shadow: none;
+    }
+}

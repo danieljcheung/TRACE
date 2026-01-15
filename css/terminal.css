@@ -1,0 +1,272 @@
+/* Terminal Window */
+.terminal {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    width: 100%;
+    max-width: 700px;
+    overflow: hidden;
+}
+
+.terminal__header {
+    background: var(--bg-tertiary);
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.terminal__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.terminal__dot--red { background: #ff5f56; }
+.terminal__dot--yellow { background: #ffbd2e; }
+.terminal__dot--green { background: #27ca40; }
+
+.terminal__title {
+    margin-left: 10px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.terminal__body {
+    padding: 25px 30px;
+}
+
+/* ASCII Logo */
+.ascii-logo {
+    color: var(--accent);
+    font-size: 0.9rem;
+    line-height: 1.2;
+    white-space: pre;
+    margin-bottom: 20px;
+}
+
+.ascii-logo--large {
+    font-size: 1rem;
+}
+
+/* Terminal Text */
+.terminal-text {
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.terminal-text--muted {
+    color: var(--text-secondary);
+}
+
+.terminal-text--accent {
+    color: var(--accent);
+}
+
+.terminal-text--success {
+    color: var(--success);
+}
+
+.terminal-text--error {
+    color: var(--error);
+}
+
+/* Typing Effect */
+.typing-text {
+    display: inline;
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2em;
+    background: var(--accent);
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+    vertical-align: text-bottom;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Terminal Input */
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.terminal-input-line__prompt {
+    color: var(--accent);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.terminal-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 1rem;
+    caret-color: var(--accent);
+}
+
+.terminal-input::placeholder {
+    color: var(--text-muted);
+}
+
+/* Code Input (verification) */
+.code-input-wrapper {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.code-input {
+    width: 45px;
+    height: 55px;
+    background: var(--bg-tertiary);
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    color: var(--accent);
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.code-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(0, 255, 255, 0.2);
+}
+
+.code-input::-webkit-outer-spin-button,
+.code-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Divider */
+.terminal-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 25px 0;
+}
+
+/* Terminal List */
+.terminal-list {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.terminal-list__item {
+    padding: 8px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.terminal-list__icon {
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.terminal-list__content {
+    flex: 1;
+}
+
+.terminal-list__title {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.terminal-list__desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Status Messages */
+.status-message {
+    padding: 12px 15px;
+    border-radius: 4px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-message--info {
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid var(--accent-dim);
+    color: var(--accent);
+}
+
+.status-message--success {
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    color: var(--success);
+}
+
+.status-message--error {
+    background: rgba(255, 68, 68, 0.1);
+    border: 1px solid rgba(255, 68, 68, 0.3);
+    color: var(--error);
+}
+
+.status-message--warning {
+    background: rgba(255, 255, 0, 0.1);
+    border: 1px solid rgba(255, 255, 0, 0.3);
+    color: var(--warning);
+}
+
+/* Loading Animation */
+.loading-dots::after {
+    content: '';
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+    0% { content: ''; }
+    25% { content: '.'; }
+    50% { content: '..'; }
+    75% { content: '...'; }
+    100% { content: ''; }
+}
+
+/* Progress bar */
+.progress-bar {
+    height: 4px;
+    background: var(--bg-tertiary);
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.progress-bar__fill {
+    height: 100%;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+/* Countdown */
+.countdown {
+    font-variant-numeric: tabular-nums;
+    color: var(--text-secondary);
+}
+
+.countdown--warning {
+    color: var(--warning);
+}
+
+.countdown--critical {
+    color: var(--error);
+}
